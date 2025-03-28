@@ -1,1 +1,1 @@
-# terrafoem-cicd
+# terraform-cicd
