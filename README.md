@@ -2,6 +2,18 @@
 
 This repository automates the deployment of an EC2 instance using Terraform, with a CI/CD pipeline powered by GitHub Actions. When changes are pushed to the `main` branch, Terraform is used to plan and apply the infrastructure changes.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    A[GitHub Actions] --> B[Checkout Repository]
+    B --> C[Set Up Terraform]
+    C --> D[Terraform Init]
+    D --> E[Terraform Plan]
+    E --> F[Terraform Apply]
+    F --> G[Provision EC2 Instance]
+```
+
 ## Infrastructure
 
 The Terraform configuration file `main.tf` provisions an EC2 instance in AWS using a specified Amazon Machine Image (AMI) ID (`ami-071226ecf16aa7d96` in this example). It provisions the EC2 instance using the `t2.micro` instance type, which is suitable for testing and development purposes under the AWS Free Tier.
